@@ -1,4 +1,5 @@
-SELECT *FROM users where email_domain like "%.edu" limit 25;
+SELECT email_domain, count(user_id) as counts FROM users
+GROUP BY email_domain ORDER BY counts DESC LIMIT 25;
 
 
 SELECT COUNT(*) FROM users WHERE email_domain LIKE "%.edu"  AND city = "New York";
